@@ -65,11 +65,6 @@
     .section-title { font-size: clamp(26px, 3.5vw, 42px); font-weight: 300; line-height: 1.2; color: var(--navy); max-width: 560px; }
 
     /* MARKET */
-    .market { background: var(--light-bg); }
-    .market-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 56px; align-items: start; margin-top: 40px; }
-    .market-copy { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
-    .market-copy p + p { margin-top: 20px; }
-    .market-copy strong { font-weight: 400; color: var(--navy); }
     .chart-wrap { background: var(--navy); padding: 28px 32px; }
     .chart-title { font-size: 10px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 32px; }
     .bar-chart { display: flex; flex-direction: column; gap: 8px; }
@@ -83,12 +78,7 @@
     .chart-legend { display: flex; gap: 24px; margin-top: 24px; }
     .legend-item { display: flex; align-items: center; gap: 8px; font-size: 9px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); }
     .legend-dot { width: 8px; height: 8px; flex-shrink: 0; }
-    .market-stats { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 40px; border-top: 1px solid rgba(20,30,43,0.08); gap: 0; }
-    .mstat { padding: 28px 24px 28px 0; border-bottom: 1px solid rgba(20,30,43,0.06); }
-    .mstat + .mstat { padding-left: 24px; border-left: 1px solid rgba(20,30,43,0.06); }
-    .mstat-val { font-size: 28px; font-weight: 300; color: var(--gold); margin-bottom: 4px; }
-    .mstat-label { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.5; }
-    .mstat-source { font-size: 9px; color: var(--mid-gray); margin-top: 4px; }
+    .mstat +
 
     /* PROCESS */
     .process { background: var(--navy); }
@@ -111,13 +101,6 @@
     .why-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; margin-top: 40px; }
     .why-intro { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .why-intro p + p { margin-top: 20px; }
-    .comp-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
-    .comp-table th { font-size: 9px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid-gray); text-align: left; padding: 0 16px 14px; border-bottom: 1px solid rgba(20,30,43,0.1); }
-    .comp-table th:first-child { padding-left: 0; }
-    .comp-table td { font-size: 13px; font-weight: 300; color: var(--gray); padding: 14px 16px; border-bottom: 1px solid rgba(20,30,43,0.06); vertical-align: top; line-height: 1.5; }
-    .comp-table td:first-child { padding-left: 0; font-weight: 400; color: var(--navy); white-space: nowrap; }
-    .comp-table tr.auric-row td { background: rgba(200,162,84,0.05); }
-    .comp-table tr.auric-row td:first-child { color: var(--gold); }
     .credentials { display: flex; flex-direction: column; }
     .cred-item { display: flex; align-items: flex-start; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(20,30,43,0.08); }
     .cred-item:first-child { padding-top: 0; }
@@ -155,20 +138,16 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .market-stats { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 900px) {
       nav { padding: 0 24px; } .nav-links { display: none; }
       section { padding: 56px 24px; } .hero { padding: 80px 24px 56px; } .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; }
-      .market-grid { grid-template-columns: 1fr; gap: 48px; }
       .why-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
       footer { padding: 36px 24px; }
-      .comp-table { display: none; }
     }
     @media (max-width: 600px) {
       .process-steps { grid-template-columns: 1fr; } .step::after { display: none; }
-      .market-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -187,7 +166,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#mercado">Mercado</a></li>
+      <li><a href="#nosotros">Mercado</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -209,65 +188,73 @@
         </div>
         <div class="hero-stats">
           <div class="stat-item reveal">
-            <div class="stat-value">19%</div>
-            <div class="stat-label">CAGR del gasto cloud — se duplica en 2028</div>
-            <div class="stat-source">IDC / Gartner</div>
+            <div class="stat-value">$300M<span style="font-size:18px;">+</span></div>
+            <div class="stat-label">USD en contratos IT negociados con AWS, Microsoft y Google</div>
           </div>
           <div class="stat-item reveal">
-            <div class="stat-value">30–40%</div>
-            <div class="stat-label">Ahorro promedio sin capturar por empresas cloud</div>
-            <div class="stat-source">Flexera 2025</div>
+            <div class="stat-value">200<span style="font-size:18px;">+</span></div>
+            <div class="stat-label">Procesos de negociación liderados directamente con hyperscalers</div>
           </div>
           <div class="stat-item reveal">
-            <div class="stat-value">57%</div>
-            <div class="stat-label">Descuento máximo que ofrecen los hyperscalers a cambio de compromisos</div>
+            <div class="stat-value">6</div>
+            <div class="stat-label">Años en LATAM Airlines — FP&A y Procurement IT Manager</div>
           </div>
         </div>
       </div>
 
-      <!-- Right column: key insight panel -->
+      <!-- Right column: market insight panel -->
       <div class="hero-panel reveal">
         <div class="panel-item">
-          <div class="panel-label">Contratos IT negociados</div>
-          <div class="panel-big">$300M<span style="font-size:28px;color:var(--gold);">+</span></div>
-          <div class="panel-sub">USD — con AWS, Microsoft y Google en LATAM</div>
+          <div class="panel-label">Ahorro promedio sin capturar</div>
+          <div class="panel-big">30–40%</div>
+          <div class="panel-sub">del gasto cloud de las empresas — Flexera 2025</div>
         </div>
         <div class="panel-divider"></div>
         <div class="panel-item">
-          <div class="panel-label">Procesos de negociación liderados</div>
-          <div class="panel-big">200<span style="font-size:28px;color:var(--gold);">+</span></div>
-          <div class="panel-sub">Directamente con los equipos de ventas de los hyperscalers</div>
+          <div class="panel-label">Descuento máximo disponible</div>
+          <div class="panel-big">57%</div>
+          <div class="panel-sub">que ofrecen los hyperscalers a cambio de compromisos</div>
         </div>
         <div class="panel-divider"></div>
         <div class="panel-item">
-          <div class="panel-label">Años en LATAM Airlines</div>
-          <div class="panel-big">6</div>
-          <div class="panel-sub">3 en FP&A · 3.5 como Procurement IT Manager</div>
+          <div class="panel-label">CAGR del gasto cloud global</div>
+          <div class="panel-big panel-red">19%</div>
+          <div class="panel-sub">Se duplica en 2028 — IDC / Gartner</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- WHY -->
+  <!-- NOSOTROS + MERCADO (merged) -->
   <section class="why" id="nosotros">
-    <div class="section-label reveal">Por qué nosotros</div>
-    <h2 class="section-title reveal">Experiencia que respalda cada negociación.</h2>
-    <div class="why-grid">
+    <div class="section-label reveal">Nosotros y el mercado</div>
+    <h2 class="section-title reveal">El mercado crece. La mayoría paga de más.<br>Nosotros cambiamos eso.</h2>
+    <div class="why-grid" style="margin-top:40px;">
       <div>
         <div class="why-intro reveal">
-          <p>No somos una consultora genérica de cloud. Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica.</p>
-          <p>Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja en una negociación.</p>
+          <p>El gasto global en cloud superará <strong>$1.4 trillion antes de 2030</strong>. Las empresas latinoamericanas negocian en desventaja frente a los hyperscalers — con contratos complejos y estructuras de descuento opacas.</p>
+          <p>Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica. Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja.</p>
         </div>
-        <table class="comp-table reveal">
-          <thead><tr><th>Alternativa</th><th>El problema</th></tr></thead>
-          <tbody>
-            <tr><td>Plataformas FinOps</td><td>Son herramientas, no consultores. No negocian ni saben leer un deal.</td></tr>
-            <tr><td>Consultoras Big 4</td><td>Advisory generalista, sin foco en negociación cloud. Caras y lentas.</td></tr>
-            <tr><td>MSPs / Resellers</td><td>Tienen contrato con el hyperscaler. Su incentivo no está del lado del cliente.</td></tr>
-            <tr class="auric-row"><td>Auric</td><td>Independiente. Sin contrato con ningún hyperscaler. Con experiencia directa negociando los contratos más grandes de Chile.</td></tr>
-          </tbody>
-        </table>
+        <div class="chart-wrap reveal" style="margin-top:32px;">
+          <p class="chart-title">Gasto mundial en cloud público (USD miles de millones)</p>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-year">2019</span><div class="bar-track"><div class="bar-fill" style="width:17%;--delay:0.1s"></div></div><span class="bar-val">$242B</span></div>
+            <div class="bar-row"><span class="bar-year">2021</span><div class="bar-track"><div class="bar-fill" style="width:26%;--delay:0.2s"></div></div><span class="bar-val">$371B</span></div>
+            <div class="bar-row"><span class="bar-year">2022</span><div class="bar-track"><div class="bar-fill" style="width:35%;--delay:0.3s"></div></div><span class="bar-val">$494B</span></div>
+            <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="bar-fill" style="width:40%;--delay:0.4s"></div></div><span class="bar-val">$564B</span></div>
+            <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="bar-fill" style="width:42%;--delay:0.5s"></div></div><span class="bar-val">$596B</span></div>
+            <div class="bar-row"><span class="bar-year">2025</span><div class="bar-track"><div class="bar-fill" style="width:51%;--delay:0.6s"></div></div><span class="bar-val">$723B</span></div>
+            <div class="bar-row"><span class="bar-year">2026E</span><div class="bar-track"><div class="bar-fill projected" style="width:62%;--delay:0.7s"></div></div><span class="bar-val">~$880B</span></div>
+            <div class="bar-row"><span class="bar-year">2027E</span><div class="bar-track"><div class="bar-fill projected" style="width:77%;--delay:0.8s"></div></div><span class="bar-val">~$1.1T</span></div>
+            <div class="bar-row"><span class="bar-year">2028E</span><div class="bar-track"><div class="bar-fill projected" style="width:92%;--delay:0.9s"></div></div><span class="bar-val">~$1.3T</span></div>
+            <div class="bar-row"><span class="bar-year">2029E</span><div class="bar-track"><div class="bar-fill projected" style="width:100%;--delay:1s"></div></div><span class="bar-val">$1.42T</span></div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div>Gasto real</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--steel);opacity:0.7"></div>Proyección Gartner</div>
+          </div>
+        </div>
       </div>
       <div class="credentials">
         <div class="cred-item reveal">
@@ -280,69 +267,16 @@
         </div>
         <div class="cred-item reveal">
           <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-          <div class="cred-text"><strong>+$300M USD en contratos IT negociados · +200 procesos liderados</strong><span>Directamente con AWS, Microsoft y Google en LATAM</span></div>
+          <div class="cred-text"><strong>+$300M USD en contratos IT negociados</strong><span>+200 procesos liderados con AWS, Microsoft y Google en LATAM</span></div>
         </div>
         <div class="cred-item reveal">
           <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
-          <div class="cred-text"><strong>Herramienta propia de análisis de consumo cloud</strong><span>Ingesta GCP · AWS · Azure — CUDs, RIs y Savings Plans con estrategia conservadora, balanceada o maximizadora</span></div>
+          <div class="cred-text"><strong>Herramienta propia de análisis cloud</strong><span>Ingesta GCP · AWS · Azure — CUDs, RIs y Savings Plans</span></div>
         </div>
         <div class="cred-item reveal">
           <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg></div>
-          <div class="cred-text"><strong>6 años en LATAM Airlines</strong><span>3 años FP&A (presupuesto USD $55M) · 3.5 años Procurement IT Manager</span></div>
+          <div class="cred-text"><strong>6 años en LATAM Airlines</strong><span>3 años FP&A (USD $55M) · 3.5 años Procurement IT Manager</span></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARKET -->
-  <section class="market" id="mercado">
-    <div class="section-label reveal">El mercado</div>
-    <h2 class="section-title reveal">El gasto en cloud ya no para.<br>¿Quién lo controla?</h2>
-    <div class="market-grid">
-      <div class="market-copy reveal">
-        <p>El gasto global en cloud superará <strong>$1.4 trillion antes de 2030</strong>, acelerado por IA generativa y migración de cargas críticas a más del 20% anual.</p>
-        <p>Las empresas latinoamericanas enfrentan contratos cada vez más complejos, estructuras de descuento opacas y renovaciones que se negocian en desventaja frente a los hyperscalers.</p>
-        <p>Los contratos cloud son <strong>instrumentos financieros</strong> con palancas de negociación que la mayoría de los equipos internos no conoce. Ahí es donde entramos nosotros.</p>
-      </div>
-      <div class="chart-wrap reveal">
-        <p class="chart-title">Gasto mundial en cloud público (USD miles de millones)</p>
-        <div class="bar-chart">
-          <div class="bar-row"><span class="bar-year">2019</span><div class="bar-track"><div class="bar-fill" style="width:17%;--delay:0.1s"></div></div><span class="bar-val">$242B</span></div>
-          <div class="bar-row"><span class="bar-year">2021</span><div class="bar-track"><div class="bar-fill" style="width:26%;--delay:0.2s"></div></div><span class="bar-val">$371B</span></div>
-          <div class="bar-row"><span class="bar-year">2022</span><div class="bar-track"><div class="bar-fill" style="width:35%;--delay:0.3s"></div></div><span class="bar-val">$494B</span></div>
-          <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="bar-fill" style="width:40%;--delay:0.4s"></div></div><span class="bar-val">$564B</span></div>
-          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="bar-fill" style="width:42%;--delay:0.5s"></div></div><span class="bar-val">$596B</span></div>
-          <div class="bar-row"><span class="bar-year">2025</span><div class="bar-track"><div class="bar-fill" style="width:51%;--delay:0.6s"></div></div><span class="bar-val">$723B</span></div>
-          <div class="bar-row"><span class="bar-year">2026E</span><div class="bar-track"><div class="bar-fill projected" style="width:62%;--delay:0.7s"></div></div><span class="bar-val">~$880B</span></div>
-          <div class="bar-row"><span class="bar-year">2027E</span><div class="bar-track"><div class="bar-fill projected" style="width:77%;--delay:0.8s"></div></div><span class="bar-val">~$1.1T</span></div>
-          <div class="bar-row"><span class="bar-year">2028E</span><div class="bar-track"><div class="bar-fill projected" style="width:92%;--delay:0.9s"></div></div><span class="bar-val">~$1.3T</span></div>
-          <div class="bar-row"><span class="bar-year">2029E</span><div class="bar-track"><div class="bar-fill projected" style="width:100%;--delay:1s"></div></div><span class="bar-val">$1.42T</span></div>
-        </div>
-        <div class="chart-legend">
-          <div class="legend-item"><div class="legend-dot" style="background:var(--gold)"></div>Gasto real</div>
-          <div class="legend-item"><div class="legend-dot" style="background:var(--steel);opacity:0.7"></div>Proyección Gartner</div>
-        </div>
-      </div>
-    </div>
-    <div class="market-stats">
-      <div class="mstat reveal">
-        <div class="mstat-val">28%</div>
-        <div class="mstat-label">crecimiento esperado en cloud próximos 12 meses</div>
-        <div class="mstat-source">Flexera State of Cloud 2025</div>
-      </div>
-      <div class="mstat reveal">
-        <div class="mstat-val">17%</div>
-        <div class="mstat-label">sobrecosto promedio vs budget 2025 en cloud</div>
-        <div class="mstat-source">Flexera State of Cloud 2025</div>
-      </div>
-      <div class="mstat reveal">
-        <div class="mstat-val">30–35%</div>
-        <div class="mstat-label">del gasto cloud es desperdicio evitable</div>
-        <div class="mstat-source">Forrester</div>
-      </div>
-      <div class="mstat reveal">
-        <div class="mstat-val">80%+</div>
-        <div class="mstat-label">de empresas LATAM corren on-demand sin estrategia de compromisos</div>
       </div>
     </div>
   </section>
@@ -388,9 +322,7 @@
         <p class="step-desc">El cliente firma el compromiso. Acompañamos hasta el cierre.</p>
       </div>
     </div>
-    <p class="process-note reveal">
-      Fee de diagnóstico fijo (~USD 5K) <span>·</span> Success fee solo si hay ahorro adicional <span>·</span> Sin retainers
-    </p>
+
   </section>
 
   <!-- CTA -->
