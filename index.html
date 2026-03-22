@@ -30,11 +30,12 @@
 
     /* HERO */
     .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; justify-content: center; padding: 80px 48px 60px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&q=60&auto=format&fit=crop"); background-size: cover; background-position: center right; opacity: 0.07; pointer-events: none; }
     .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 600px; height: 600px; border: 1px solid rgba(200,162,84,0.06); border-radius: 50%; pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -200px; right: 60px; width: 900px; height: 900px; border: 1px solid rgba(200,162,84,0.04); border-radius: 50%; pointer-events: none; }
     .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; }
     .hero-eyebrow { font-size: 10px; font-weight: 300; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
-    .hero-headline { font-size: clamp(38px, 6vw, 68px); font-weight: 300; line-height: 1.1; color: var(--cream); max-width: 720px; margin-bottom: 12px; }
+    .hero-headline { font-size: clamp(36px, 5vw, 60px); font-weight: 300; line-height: 1.1; color: var(--cream); max-width: 560px; margin-bottom: 12px; }
     .hero-headline em { font-style: normal; color: var(--gold); }
     .gold-rule { width: 48px; height: 1px; background: var(--gold); margin: 24px 0; }
     .hero-body { font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--mid-gray); max-width: 480px; margin-bottom: 40px; }
@@ -69,12 +70,12 @@
     .market-copy { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .market-copy p + p { margin-top: 20px; }
     .market-copy strong { font-weight: 400; color: var(--navy); }
-    .chart-wrap { background: var(--navy); padding: 40px; }
+    .chart-wrap { background: var(--navy); padding: 28px 32px; }
     .chart-title { font-size: 10px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 32px; }
-    .bar-chart { display: flex; flex-direction: column; gap: 10px; }
+    .bar-chart { display: flex; flex-direction: column; gap: 8px; }
     .bar-row { display: flex; align-items: center; gap: 12px; }
     .bar-year { font-size: 10px; font-weight: 300; color: var(--gray); width: 32px; text-align: right; flex-shrink: 0; }
-    .bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.05); overflow: hidden; }
+    .bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.05); overflow: hidden; }
     .bar-fill { height: 100%; background: var(--gold); transform-origin: left; animation: barGrow 1s ease-out forwards; animation-delay: var(--delay,0s); transform: scaleX(0); }
     .bar-fill.projected { background: var(--steel); opacity: 0.7; }
     @keyframes barGrow { to { transform: scaleX(1); } }
@@ -91,6 +92,7 @@
 
     /* PROCESS */
     .process { background: var(--navy); }
+    .process-photo { width: 100%; height: 180px; object-fit: cover; object-position: center 40%; margin-bottom: 40px; opacity: 0.35; display: block; filter: grayscale(30%); }
     .process .section-title { color: var(--cream); }
     .process-header { display: block; margin-bottom: 40px; }
     .process-intro { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--mid-gray); margin-top: 16px; }
@@ -107,6 +109,7 @@
 
     /* WHY */
     .why { background: var(--light-bg); }
+    .why-photo { width: 100%; height: 220px; object-fit: cover; object-position: center; margin-top: 40px; filter: grayscale(20%) contrast(1.05); display: block; }
     .why-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; margin-top: 40px; }
     .why-intro { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .why-intro p + p { margin-top: 20px; }
@@ -158,7 +161,7 @@
     }
     @media (max-width: 900px) {
       nav { padding: 0 24px; } .nav-links { display: none; }
-      section { padding: 56px 24px; } .hero { padding: 80px 24px 56px; } .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; }
+      section { padding: 56px 24px; } .hero { padding: 80px 24px 56px; } .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; } .why-photo { height: 160px; } .process-photo { height: 120px; }
       .market-grid { grid-template-columns: 1fr; gap: 48px; }
       .why-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
@@ -195,6 +198,7 @@
 
   <!-- HERO -->
   <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
     <div class="hero-inner">
       <div>
         <p class="hero-eyebrow reveal">Santiago, Chile · FinOps & Cloud Advisory</p>
@@ -250,7 +254,8 @@
   <section class="why" id="nosotros">
     <div class="section-label reveal">Por qué nosotros</div>
     <h2 class="section-title reveal">Experiencia que respalda cada negociación.</h2>
-    <div class="why-grid">
+    <img class="why-photo reveal" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1400&q=60&auto=format&fit=crop&crop=center" alt="">
+    <div class="why-grid" style="margin-top:40px;">
       <div>
         <div class="why-intro reveal">
           <p>No somos una consultora genérica de cloud. Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica.</p>
@@ -300,7 +305,6 @@
         <p>El gasto global en cloud superará <strong>$1.4 trillion antes de 2030</strong>, acelerado por IA generativa y migración de cargas críticas a más del 20% anual.</p>
         <p>Las empresas latinoamericanas enfrentan contratos cada vez más complejos, estructuras de descuento opacas y renovaciones que se negocian en desventaja frente a los hyperscalers.</p>
         <p>Los contratos cloud son <strong>instrumentos financieros</strong> con palancas de negociación que la mayoría de los equipos internos no conoce. Ahí es donde entramos nosotros.</p>
-        </div>
       </div>
       <div class="chart-wrap reveal">
         <p class="chart-title">Gasto mundial en cloud público (USD miles de millones)</p>
@@ -354,6 +358,7 @@
         <p class="process-intro reveal">Un proceso estructurado que va desde el diagnóstico del contrato hasta la firma del acuerdo optimizado con el hyperscaler.</p>
       </div>
       </div>
+    <img class="process-photo reveal" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1400&q=60&auto=format&fit=crop&crop=center" alt="">
     <div class="process-steps">
       <div class="step reveal">
         <div class="step-num">I</div>
