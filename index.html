@@ -281,7 +281,7 @@
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="/cdn-cgi/l/email-protection#04676b6a70656770446571766d6767686b71602a676b69" class="nav-cta">Conversemos</a>
+    <a href="mailto:contact@auriccloud.com" class="nav-cta">Conversemos</a>
   </nav>
 
   <!-- HERO -->
@@ -296,7 +296,7 @@
         <div class="gold-rule r"></div>
         <p class="hero-body r">Consultoría especializada en diagnóstico de contratos cloud y negociación con hyperscalers para empresas en Latinoamérica.</p>
         <div class="hero-actions r">
-          <a href="/cdn-cgi/l/email-protection#f5969a9b81949681b59480879c9696999a8091db969a98" class="btn-gold">Conversemos</a>
+          <a href="mailto:contact@auriccloud.com" class="btn-gold">Conversemos</a>
           <a href="#proceso" class="btn-ghost">Ver cómo funciona</a>
         </div>
         <div class="hero-badges">
@@ -549,11 +549,19 @@
       <span class="badge">FOCUS</span>
     </div>
     <div class="footer-links">
-      <a href="/cdn-cgi/l/email-protection#a3c0cccdd7c2c0d7e3c2d6d1cac0c0cfccd6c78dc0ccce"><span class="__cf_email__" data-cfemail="791a16170d181a0d39180c0b101a1a15160c1d571a1614">[email&#160;protected]</span></a>
+      <a href="mailto:contact@auriccloud.com">contact@auriccloud.com</a>
       <!-- TODO: Replace with your actual LinkedIn profile URL -->
       <a href="https://linkedin.com/in/antoniomarangunic">LinkedIn</a>
     </div>
     <div class="footer-copy">© 2026 Auric Cloud Advisory · Santiago, Chile</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn
+  <script>
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.r').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
