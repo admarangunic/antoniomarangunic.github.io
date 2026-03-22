@@ -127,21 +127,22 @@
 
     /* ── NOSOTROS (redesigned) ── */
     .nosotros { background: var(--light); }
-    .nosotros-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 36px; }
+    .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 36px; }
     .nosotros-copy { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .nosotros-copy p + p { margin-top: 18px; }
     .nosotros-copy strong { font-weight: 400; color: var(--navy); }
-    .nosotros-who { padding-top: 8px; }
-    .nosotros-name { font-size: 20px; font-weight: 400; color: var(--navy); letter-spacing: 0.02em; }
-    .nosotros-role { font-size: 12px; font-weight: 300; color: var(--muted); letter-spacing: 0.08em; margin-top: 4px; }
+    .nosotros-profile { }
+    .nosotros-name { font-size: 22px; font-weight: 400; color: var(--navy); letter-spacing: 0.02em; }
+    .nosotros-title { font-size: 11px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+    .nosotros-role { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; }
     .nosotros-li { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,162,84,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
     .nosotros-li:hover { border-color: var(--gold); }
-    .num-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
-    .num-card { background: #fff; padding: 28px 24px; border-bottom: 2px solid var(--gold); }
-    .num-val { font-size: 30px; font-weight: 300; color: var(--gold); letter-spacing: -0.02em; line-height: 1; }
-    .num-label { font-size: 12px; font-weight: 300; color: var(--gray); margin-top: 8px; line-height: 1.5; }
-    .cert-strip { display: flex; gap: 32px; margin-top: 32px; align-items: center; flex-wrap: wrap; }
-    .cert-strip span { font-size: 10px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); padding: 6px 12px; border: 1px solid rgba(20,30,43,0.1); }
+    .profile-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 28px; }
+    .profile-num { background: #fff; padding: 20px 18px; border-bottom: 2px solid var(--gold); }
+    .profile-num-val { font-size: 24px; font-weight: 300; color: var(--gold); letter-spacing: -0.02em; line-height: 1; }
+    .profile-num-label { font-size: 11px; font-weight: 300; color: var(--gray); margin-top: 6px; line-height: 1.45; }
+    .profile-certs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .profile-certs span { font-size: 9px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 5px 10px; border: 1px solid rgba(20,30,43,0.1); }
 
     /* Chart */
     .chart-wrap { background: var(--navy); padding: 28px 30px; margin-top: 36px; }
@@ -256,8 +257,8 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-panel { display: none; }
       .nosotros-intro { grid-template-columns: 1fr; gap: 40px; }
-      .nosotros-grid { grid-template-columns: 1fr; gap: 48px; }
-      .num-grid { grid-template-columns: 1fr; }
+      .nosotros-grid { grid-template-columns: 1fr; gap: 40px; }
+      .profile-nums { grid-template-columns: 1fr; }
       .finops-grid { grid-template-columns: 1fr; gap: 40px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .step::after { display: none; }
@@ -434,40 +435,44 @@
     <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1557999127-7f1a78da0b10?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Por qué nosotros</div>
     <h2 class="sec-title r">Experiencia que respalda<br>cada negociación.</h2>
-    <div class="nosotros-intro">
-      <div>
-        <div class="nosotros-copy r">
-          <p>Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica. Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja.</p>
-          <p>No somos una consultora genérica de cloud. Somos independientes — sin contrato con ningún hyperscaler. Nuestro único incentivo está del lado del cliente.</p>
-        </div>
+    <div class="nosotros-grid">
+      <!-- Left: copy -->
+      <div class="nosotros-copy r">
+        <p>Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica. Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja.</p>
+        <p>No somos una consultora genérica de cloud. Somos independientes — sin contrato con ningún hyperscaler. Nuestro único incentivo está del lado del cliente.</p>
       </div>
-      <div class="nosotros-who r">
-        <!-- TODO: Replace LinkedIn URL with your actual profile -->
+      <!-- Right: full profile -->
+      <div class="nosotros-profile r">
         <div class="nosotros-name">Antonio Marangunic</div>
+        <div class="nosotros-title">Founder & Main Consultant</div>
         <div class="nosotros-role">Ex-Procurement IT Manager, LATAM Airlines · FinOps Certified Practitioner</div>
         <a href="https://linkedin.com/in/antoniomarangunic" class="nosotros-li" target="_blank">LinkedIn →</a>
+        <div class="profile-nums">
+          <div class="profile-num">
+            <div class="profile-num-val">$900M+</div>
+            <div class="profile-num-label">USD en TCV de contratos IT negociados en LATAM</div>
+          </div>
+          <div class="profile-num">
+            <div class="profile-num-val">+200</div>
+            <div class="profile-num-label">procesos de negociación y procurement IT liderados</div>
+          </div>
+          <div class="profile-num">
+            <div class="profile-num-val">6 años</div>
+            <div class="profile-num-label">en LATAM Airlines — FP&A + Procurement IT Manager</div>
+          </div>
+          <div class="profile-num">
+            <div class="profile-num-val">3 clouds</div>
+            <div class="profile-num-label">certificado en AWS, Azure y GCP</div>
+          </div>
+        </div>
+        <div class="profile-certs">
+          <span>AWS Practitioner</span>
+          <span>Azure AZ-900</span>
+          <span>GCP Digital Leader</span>
+          <span>FinOps FOCP</span>
+          <span>FOCUS Analyst</span>
+        </div>
       </div>
-    </div>
-    <div class="num-grid">
-      <div class="num-card r">
-        <div class="num-val">$900M+</div>
-        <div class="num-label">USD en TCV de contratos IT negociados con AWS, Microsoft y Google en LATAM</div>
-      </div>
-      <div class="num-card r">
-        <div class="num-val">+200</div>
-        <div class="num-label">procesos de negociación y procurement IT liderados</div>
-      </div>
-      <div class="num-card r">
-        <div class="num-val">6 años</div>
-        <div class="num-label">en LATAM Airlines — 3 en FP&A (USD $55M budget) · 3.5 como Procurement IT Manager</div>
-      </div>
-    </div>
-    <div class="cert-strip r">
-      <span>AWS Cloud Practitioner</span>
-      <span>Azure AZ-900</span>
-      <span>GCP Digital Leader</span>
-      <span>FinOps FOCP</span>
-      <span>FOCUS Analyst</span>
     </div>
   </section>
 
