@@ -103,7 +103,7 @@
     .panel-sub { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; line-height: 1.5; }
 
     /* ── SECTIONS base ── */
-    .section { padding: 80px 48px; }
+    .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
     .sec-label { font-size: 10px; font-weight: 300; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
     .sec-title { font-size: clamp(26px, 3.2vw, 40px); font-weight: 300; line-height: 1.15; color: var(--navy); }
     .sec-title.light { color: var(--cream); }
@@ -153,8 +153,21 @@
     .ms-lbl { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.5; }
     .ms-src { font-size: 9px; color: var(--muted); margin-top: 3px; }
 
+    /* ── MERCADO ── */
+    .mercado { background: var(--navy-2); }
+    .mercado .sec-title { color: var(--cream); }
+    .mercado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .mercado .nosotros-copy { color: var(--muted); }
+    .mercado .nosotros-copy strong { color: var(--cream); }
+    .mercado .mstats { grid-template-columns: 1fr 1fr; }
+    .mercado .ms { padding: 20px 16px 20px 0; }
+    .mercado .ms + .ms { padding-left: 16px; border-left: 1px solid rgba(200,162,84,0.1); }
+    .mercado .ms-val { color: var(--gold); }
+    .mercado .ms-lbl { color: var(--muted); }
+    .mercado .ms-src { color: rgba(154,152,144,0.5); }
+
     /* ── PROCESS ── */
-    .proceso { background: var(--navy-2); }
+    .proceso { background: var(--navy-2); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
     .proceso .sec-title { color: var(--cream); }
     .proceso-intro { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.7; margin-top: 12px; max-width: 560px; }
 
@@ -168,7 +181,7 @@
     .step-desc { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.6; }
 
     /* ── CTA ── */
-    .cta { background: var(--navy); padding: 80px 48px; }
+    .cta { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
     .cta-inner { max-width: 560px; }
     .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 16px; }
     .cta-title em { font-style: normal; color: var(--gold); }
@@ -199,6 +212,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
+      .section, .proceso, .cta { min-height: auto; }
+      .mercado-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-panel { display: none; }
       .nosotros-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -234,7 +249,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#nosotros">Mercado</a></li>
+      <li><a href="#mercado">Mercado</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -294,40 +309,17 @@
     </div>
   </section>
 
-  <!-- NOSOTROS + MERCADO -->
+  <!-- NOSOTROS -->
   <section class="section nosotros" id="nosotros">
-    <div class="sec-label r">Nosotros y el mercado</div>
-    <h2 class="sec-title r">El mercado crece. La mayoría paga de más.</h2>
-
+    <div class="sec-label r">Por qué nosotros</div>
+    <h2 class="sec-title r">Experiencia que respalda<br>cada negociación.</h2>
     <div class="nosotros-grid">
-
-      <!-- Left: copy + chart -->
       <div>
         <div class="nosotros-copy r">
-          <p>El gasto global en cloud superará <strong>$1.4 trillion antes de 2030</strong>, acelerado por IA generativa a más del 20% anual. Las empresas latinoamericanas negocian en desventaja frente a los hyperscalers — con contratos complejos y estructuras de descuento opacas.</p>
           <p>Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica. Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja.</p>
-        </div>
-
-        <div class="chart-wrap r">
-          <p class="chart-title">Gasto mundial en cloud público — USD miles de millones</p>
-          <div class="bar-row"><span class="bar-year">2019</span><div class="bar-track"><div class="bar-fill" style="width:17%;--d:0.1s"></div></div><span class="bar-val">$242B</span></div>
-          <div class="bar-row"><span class="bar-year">2021</span><div class="bar-track"><div class="bar-fill" style="width:26%;--d:0.2s"></div></div><span class="bar-val">$371B</span></div>
-          <div class="bar-row"><span class="bar-year">2022</span><div class="bar-track"><div class="bar-fill" style="width:35%;--d:0.3s"></div></div><span class="bar-val">$494B</span></div>
-          <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="bar-fill" style="width:40%;--d:0.4s"></div></div><span class="bar-val">$564B</span></div>
-          <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="bar-fill" style="width:42%;--d:0.5s"></div></div><span class="bar-val">$596B</span></div>
-          <div class="bar-row"><span class="bar-year">2025</span><div class="bar-track"><div class="bar-fill" style="width:51%;--d:0.6s"></div></div><span class="bar-val">$723B</span></div>
-          <div class="bar-row"><span class="bar-year">2026E</span><div class="bar-track"><div class="bar-fill proj" style="width:62%;--d:0.7s"></div></div><span class="bar-val">~$880B</span></div>
-          <div class="bar-row"><span class="bar-year">2027E</span><div class="bar-track"><div class="bar-fill proj" style="width:77%;--d:0.8s"></div></div><span class="bar-val">~$1.1T</span></div>
-          <div class="bar-row"><span class="bar-year">2028E</span><div class="bar-track"><div class="bar-fill proj" style="width:92%;--d:0.9s"></div></div><span class="bar-val">~$1.3T</span></div>
-          <div class="bar-row"><span class="bar-year">2029E</span><div class="bar-track"><div class="bar-fill proj" style="width:100%;--d:1.0s"></div></div><span class="bar-val">$1.42T</span></div>
-          <div class="chart-legend">
-            <div class="leg"><div class="leg-dot" style="background:var(--gold)"></div>Gasto real</div>
-            <div class="leg"><div class="leg-dot" style="background:var(--steel);opacity:0.65"></div>Proyección Gartner</div>
-          </div>
+          <p>No somos una consultora genérica de cloud. Somos independientes — sin contrato con ningún hyperscaler. Nuestro único incentivo está del lado del cliente.</p>
         </div>
       </div>
-
-      <!-- Right: credentials -->
       <div class="creds">
         <div class="cred r">
           <div class="cred-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
@@ -350,29 +342,40 @@
           <div><div class="cred-label">6 años en LATAM Airlines</div><div class="cred-sub">3 años FP&A (USD $55M) · 3.5 años Procurement IT Manager</div></div>
         </div>
       </div>
-
     </div>
+  </section>
 
-    <!-- Market stats strip -->
-    <div class="mstats">
-      <div class="ms r">
-        <div class="ms-val">28%</div>
-        <div class="ms-lbl">crecimiento esperado en cloud próximos 12 meses</div>
-        <div class="ms-src">Flexera State of Cloud 2025</div>
+  <!-- MERCADO -->
+  <section class="section mercado" id="mercado">
+    <div class="sec-label r">El mercado</div>
+    <h2 class="sec-title r">El gasto en cloud ya no para.<br>¿Quién lo controla?</h2>
+    <div class="mercado-grid">
+      <div class="nosotros-copy r" style="margin-top:32px;">
+        <p>El gasto global en cloud superará <strong>$1.4 trillion antes de 2030</strong>, acelerado por IA generativa a más del 20% anual. Las empresas latinoamericanas negocian en desventaja — con contratos complejos y estructuras de descuento opacas.</p>
+        <p>Los contratos cloud son <strong>instrumentos financieros</strong> con palancas de negociación que la mayoría de los equipos internos no conoce. Ahí es donde entramos nosotros.</p>
+        <div class="mstats" style="margin-top:32px;border-top:1px solid rgba(20,30,43,0.08);">
+          <div class="ms r"><div class="ms-val">28%</div><div class="ms-lbl">crecimiento esperado próximos 12 meses</div><div class="ms-src">Flexera 2025</div></div>
+          <div class="ms r"><div class="ms-val">17%</div><div class="ms-lbl">sobrecosto promedio vs budget cloud 2025</div><div class="ms-src">Flexera 2025</div></div>
+          <div class="ms r"><div class="ms-val">30–35%</div><div class="ms-lbl">del gasto cloud es desperdicio evitable</div><div class="ms-src">Forrester</div></div>
+          <div class="ms r"><div class="ms-val">80%+</div><div class="ms-lbl">de empresas LATAM sin estrategia de compromisos</div></div>
+        </div>
       </div>
-      <div class="ms r">
-        <div class="ms-val">17%</div>
-        <div class="ms-lbl">sobrecosto promedio vs budget en cloud 2025</div>
-        <div class="ms-src">Flexera State of Cloud 2025</div>
-      </div>
-      <div class="ms r">
-        <div class="ms-val">30–35%</div>
-        <div class="ms-lbl">del gasto cloud es desperdicio evitable</div>
-        <div class="ms-src">Forrester</div>
-      </div>
-      <div class="ms r">
-        <div class="ms-val">80%+</div>
-        <div class="ms-lbl">de empresas LATAM sin estrategia de compromisos cloud</div>
+      <div class="chart-wrap r" style="margin-top:32px;">
+        <p class="chart-title">Gasto mundial en cloud público — USD miles de millones</p>
+        <div class="bar-row"><span class="bar-year">2019</span><div class="bar-track"><div class="bar-fill" style="width:17%;--d:0.1s"></div></div><span class="bar-val">$242B</span></div>
+        <div class="bar-row"><span class="bar-year">2021</span><div class="bar-track"><div class="bar-fill" style="width:26%;--d:0.2s"></div></div><span class="bar-val">$371B</span></div>
+        <div class="bar-row"><span class="bar-year">2022</span><div class="bar-track"><div class="bar-fill" style="width:35%;--d:0.3s"></div></div><span class="bar-val">$494B</span></div>
+        <div class="bar-row"><span class="bar-year">2023</span><div class="bar-track"><div class="bar-fill" style="width:40%;--d:0.4s"></div></div><span class="bar-val">$564B</span></div>
+        <div class="bar-row"><span class="bar-year">2024</span><div class="bar-track"><div class="bar-fill" style="width:42%;--d:0.5s"></div></div><span class="bar-val">$596B</span></div>
+        <div class="bar-row"><span class="bar-year">2025</span><div class="bar-track"><div class="bar-fill" style="width:51%;--d:0.6s"></div></div><span class="bar-val">$723B</span></div>
+        <div class="bar-row"><span class="bar-year">2026E</span><div class="bar-track"><div class="bar-fill proj" style="width:62%;--d:0.7s"></div></div><span class="bar-val">~$880B</span></div>
+        <div class="bar-row"><span class="bar-year">2027E</span><div class="bar-track"><div class="bar-fill proj" style="width:77%;--d:0.8s"></div></div><span class="bar-val">~$1.1T</span></div>
+        <div class="bar-row"><span class="bar-year">2028E</span><div class="bar-track"><div class="bar-fill proj" style="width:92%;--d:0.9s"></div></div><span class="bar-val">~$1.3T</span></div>
+        <div class="bar-row"><span class="bar-year">2029E</span><div class="bar-track"><div class="bar-fill proj" style="width:100%;--d:1.0s"></div></div><span class="bar-val">$1.42T</span></div>
+        <div class="chart-legend">
+          <div class="leg"><div class="leg-dot" style="background:var(--gold)"></div>Gasto real</div>
+          <div class="leg"><div class="leg-dot" style="background:var(--steel);opacity:0.65"></div>Proyección Gartner</div>
+        </div>
       </div>
     </div>
   </section>
