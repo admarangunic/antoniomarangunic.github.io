@@ -30,7 +30,7 @@
 
     /* HERO */
     .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; justify-content: center; padding: 80px 48px 60px; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&q=60&auto=format&fit=crop"); background-size: cover; background-position: center right; opacity: 0.07; pointer-events: none; }
+    .hero-bg { position: absolute; inset: 0; background-image: url("https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1800&q=60&auto=format&fit=crop"); background-size: cover; background-position: center right; opacity: 0.07; pointer-events: none; }
     .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 600px; height: 600px; border: 1px solid rgba(200,162,84,0.06); border-radius: 50%; pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -200px; right: 60px; width: 900px; height: 900px; border: 1px solid rgba(200,162,84,0.04); border-radius: 50%; pointer-events: none; }
     .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; }
@@ -92,7 +92,6 @@
 
     /* PROCESS */
     .process { background: var(--navy); }
-    .process-photo { width: 100%; height: 180px; object-fit: cover; object-position: center 40%; margin-bottom: 40px; opacity: 0.35; display: block; filter: grayscale(30%); }
     .process .section-title { color: var(--cream); }
     .process-header { display: block; margin-bottom: 40px; }
     .process-intro { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--mid-gray); margin-top: 16px; }
@@ -109,7 +108,6 @@
 
     /* WHY */
     .why { background: var(--light-bg); }
-    .why-photo { width: 100%; height: 220px; object-fit: cover; object-position: center; margin-top: 40px; filter: grayscale(20%) contrast(1.05); display: block; }
     .why-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; margin-top: 40px; }
     .why-intro { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .why-intro p + p { margin-top: 20px; }
@@ -161,7 +159,7 @@
     }
     @media (max-width: 900px) {
       nav { padding: 0 24px; } .nav-links { display: none; }
-      section { padding: 56px 24px; } .hero { padding: 80px 24px 56px; } .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; } .why-photo { height: 160px; } .process-photo { height: 120px; }
+      section { padding: 56px 24px; } .hero { padding: 80px 24px 56px; } .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; }
       .market-grid { grid-template-columns: 1fr; gap: 48px; }
       .why-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
@@ -254,8 +252,7 @@
   <section class="why" id="nosotros">
     <div class="section-label reveal">Por qué nosotros</div>
     <h2 class="section-title reveal">Experiencia que respalda cada negociación.</h2>
-    <img class="why-photo reveal" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1400&q=60&auto=format&fit=crop&crop=center" alt="">
-    <div class="why-grid" style="margin-top:40px;">
+    <div class="why-grid">
       <div>
         <div class="why-intro reveal">
           <p>No somos una consultora genérica de cloud. Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica.</p>
@@ -358,7 +355,6 @@
         <p class="process-intro reveal">Un proceso estructurado que va desde el diagnóstico del contrato hasta la firma del acuerdo optimizado con el hyperscaler.</p>
       </div>
       </div>
-    <img class="process-photo reveal" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1400&q=60&auto=format&fit=crop&crop=center" alt="">
     <div class="process-steps">
       <div class="step reveal">
         <div class="step-num">I</div>
