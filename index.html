@@ -106,7 +106,17 @@
     .panel-sub { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; line-height: 1.5; }
 
     /* ── SECTIONS base ── */
-    .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
+    .section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; position: relative; overflow: hidden; }
+    .section-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0.10; pointer-events: none;
+    }
+    .section-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 50%, transparent 20%, rgba(20,30,43,0.7) 100%);
+    }
+    .section > *:not(.section-bg) { position: relative; z-index: 1; }
     .sec-label { font-size: 10px; font-weight: 300; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
     .sec-title { font-size: clamp(26px, 3.2vw, 40px); font-weight: 300; line-height: 1.15; color: var(--navy); }
     .sec-title.light { color: var(--cream); }
@@ -152,7 +162,8 @@
     .ms-src { font-size: 9px; color: var(--muted); margin-top: 3px; }
 
     /* ── MERCADO ── */
-    .mercado { background: var(--navy-2); }
+    .mercado { background: var(--navy-2); position: relative; overflow: hidden; }
+    .mercado > *:not(.section-bg) { position: relative; z-index: 1; }
     .mercado .sec-title { color: var(--cream); }
     .mercado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
     .mercado .nosotros-copy { color: var(--muted); }
@@ -165,7 +176,8 @@
     .mercado .ms-src { color: rgba(154,152,144,0.5); }
 
     /* ── PROCESS ── */
-    .proceso { background: var(--navy-2); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
+    .proceso { background: var(--navy-2); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; position: relative; overflow: hidden; }
+    .proceso > *:not(.section-bg) { position: relative; z-index: 1; }
     .proceso .sec-title { color: var(--cream); }
     .proceso-intro { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.7; margin-top: 12px; max-width: 560px; }
 
@@ -347,6 +359,7 @@
 
   <!-- FINOPS CONTEXT (NEW) -->
   <section class="section finops" id="finops">
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">El contexto</div>
     <h2 class="sec-title light r">El gasto cloud crece.<br>¿Quién en tu organización lo gestiona?</h2>
     <div class="finops-grid">
@@ -377,6 +390,7 @@
 
   <!-- MERCADO -->
   <section class="section mercado" id="mercado">
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1583531172005-814194b5f3e2?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">El mercado</div>
     <h2 class="sec-title r">El gasto en cloud ya no para.<br>¿Quién lo controla?</h2>
     <div class="mercado-grid">
@@ -453,6 +467,7 @@
 
   <!-- PROCESO -->
   <section class="section proceso" id="proceso">
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Cómo trabajamos</div>
     <h2 class="sec-title light r">5 semanas a un contrato mejor.</h2>
     <p class="proceso-intro r">Desde el diagnóstico del contrato hasta la firma del acuerdo optimizado con el hyperscaler.</p>
