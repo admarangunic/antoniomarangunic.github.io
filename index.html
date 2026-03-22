@@ -174,7 +174,7 @@
     .proceso .sec-title { color: var(--cream); }
     .proceso-intro { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.7; margin-top: 12px; max-width: 560px; }
 
-    .steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; margin-top: 40px; }
+    .steps { display: grid; grid-template-columns: repeat(6,1fr); gap: 2px; margin-top: 40px; }
     .step { background: var(--navy); padding: 32px 24px; position: relative; }
     .step::after { content: ''; position: absolute; right: -1px; top: 28px; bottom: 28px; width: 1px; background: rgba(200,162,84,0.1); }
     .step:last-child::after { display: none; }
@@ -209,6 +209,28 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { width: 100%; font-size: 10px; font-weight: 300; letter-spacing: 0.12em; color: rgba(107,110,114,0.45); text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.04); }
 
+    /* ── FINOPS CONTEXT (NEW) ── */
+    .finops { background: var(--navy); }
+    .finops .sec-title { color: var(--cream); }
+    .finops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 48px; }
+    .finops-body { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--muted); }
+    .finops-body p + p { margin-top: 18px; }
+    .finops-roles { background: rgba(200,162,84,0.04); border: 1px solid rgba(200,162,84,0.1); padding: 32px; }
+    .finops-roles h3 { font-size: 18px; font-weight: 400; color: var(--cream); margin-bottom: 16px; }
+    .finops-roles .roles-intro { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    .role-item { margin-bottom: 18px; padding-left: 14px; border-left: 2px solid rgba(200,162,84,0.25); }
+    .role-item strong { display: block; font-size: 13px; font-weight: 400; color: var(--cream); margin-bottom: 3px; }
+    .role-item p { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.6; }
+    .finops-conclusion { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(200,162,84,0.1); font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--cream); }
+
+    /* ── PREREQUISITES (NEW) ── */
+    .prereq { background: var(--light); }
+    .prereq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 40px; }
+    .prereq-card { background: #fff; padding: 32px 24px; border-bottom: 2px solid var(--gold); }
+    .prereq-num { font-size: 28px; font-weight: 300; color: var(--gold); margin-bottom: 10px; }
+    .prereq-title { font-size: 13px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+    .prereq-desc { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.6; }
+
     /* ── REVEAL ANIMATION ── */
     .r { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .r.on { opacity: 1; transform: none; }
@@ -220,9 +242,11 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-panel { display: none; }
       .nosotros-grid { grid-template-columns: 1fr; gap: 48px; }
+      .finops-grid { grid-template-columns: 1fr; gap: 40px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .step::after { display: none; }
       .mstats { grid-template-columns: 1fr 1fr; }
+      .prereq-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
@@ -252,11 +276,12 @@
     </a>
     <ul class="nav-links">
       <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#finops">FinOps</a></li>
       <li><a href="#mercado">Mercado</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="mailto:contact@auriccloud.com" class="nav-cta">Conversemos</a>
+    <a href="/cdn-cgi/l/email-protection#04676b6a70656770446571766d6767686b71602a676b69" class="nav-cta">Conversemos</a>
   </nav>
 
   <!-- HERO -->
@@ -271,7 +296,7 @@
         <div class="gold-rule r"></div>
         <p class="hero-body r">Consultoría especializada en diagnóstico de contratos cloud y negociación con hyperscalers para empresas en Latinoamérica.</p>
         <div class="hero-actions r">
-          <a href="mailto:contact@auriccloud.com" class="btn-gold">Conversemos</a>
+          <a href="/cdn-cgi/l/email-protection#f5969a9b81949681b59480879c9696999a8091db969a98" class="btn-gold">Conversemos</a>
           <a href="#proceso" class="btn-ghost">Ver cómo funciona</a>
         </div>
         <div class="hero-badges">
@@ -357,6 +382,36 @@
     </div>
   </section>
 
+  <!-- FINOPS CONTEXT (NEW) -->
+  <section class="section finops" id="finops">
+    <div class="sec-label r">El contexto</div>
+    <h2 class="sec-title light r">El gasto cloud crece.<br>¿Quién en tu organización lo gestiona?</h2>
+    <div class="finops-grid">
+      <div class="finops-body r">
+        <p>FinOps — Cloud Financial Operations — es la disciplina que permite a las organizaciones tomar decisiones informadas sobre su gasto en tecnología cloud. No es una herramienta ni un software: es un marco operativo que combina ingeniería, finanzas y procurement para maximizar el valor de cada dólar invertido en la nube.</p>
+        <p>En 2026, el gasto global en cloud público supera USD $1 trillón. La FinOps Foundation — una comunidad de más de 96.000 practicantes en más de 15.000 empresas, incluyendo 93 del Fortune 50 — reporta en su encuesta anual que el 98% de los equipos de FinOps ya gestiona gasto en IA, el 90% cubre SaaS, y el 64% abarca licenciamiento. FinOps dejó de ser una práctica de nicho: es la forma en que las empresas más maduras controlan su tecnología.</p>
+        <p>Pero en Latinoamérica, la realidad es distinta. La mayoría de las empresas opera en etapa "Crawl" — reactiva, sin visibilidad clara del gasto, con decisiones de compra cloud que recaen en equipos que no tienen las herramientas ni el contexto para negociar. Según Flexera, entre un 27% y 35% del gasto cloud se desperdicia. Según Gartner, las organizaciones sin gobernanza cloud adecuada sobrepagan hasta un 40% anual.</p>
+      </div>
+      <div class="finops-roles r">
+        <h3>¿Quién debería negociar tu contrato cloud?</h3>
+        <p class="roles-intro">El contrato cloud es un instrumento financiero de alta complejidad. Lo negocia un equipo de ventas del hyperscaler entrenado para maximizar el compromiso del cliente. Del otro lado, en la mayoría de las empresas, están:</p>
+        <div class="role-item">
+          <strong>Los ingenieros</strong>
+          <p>Conocen el consumo técnico pero no las palancas comerciales. No manejan estructuras de descuento, Enterprise Discount Programs, ni ciclos de venta del proveedor.</p>
+        </div>
+        <div class="role-item">
+          <strong>Finanzas</strong>
+          <p>Entiende el presupuesto pero no la diferencia entre un CUD, un RI y un Savings Plan. No puede evaluar si un compromiso de 3 años es óptimo sin entender el perfil de consumo por servicio.</p>
+        </div>
+        <div class="role-item">
+          <strong>Procurement generalista</strong>
+          <p>Negocia contratos de todo tipo pero enfrenta cloud como una categoría opaca, con pricing dinámico y modelos de descuento que cambian cada trimestre.</p>
+        </div>
+        <div class="finops-conclusion">La negociación cloud requiere un perfil que combine las tres perspectivas: visibilidad técnica del consumo, disciplina financiera para modelar escenarios de compromiso, y experiencia en procurement para entender las palancas reales de negociación con AWS, Microsoft y Google. Ese perfil no suele existir internamente. Y ahí es donde entra Auric.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- MERCADO -->
   <section class="section mercado" id="mercado">
     <div class="sec-label r">El mercado</div>
@@ -429,6 +484,35 @@
         <div class="step-name">Firma</div>
         <p class="step-desc">El cliente firma el compromiso. Acompañamos hasta el cierre.</p>
       </div>
+      <div class="step r">
+        <div class="step-roman">∞</div>
+        <div class="step-week">Post-firma</div>
+        <div class="step-name">Acompañamiento</div>
+        <p class="step-desc">Monitoreo trimestral de consumo vs compromiso. Alertas de desvío. Preparación para la próxima renovación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREREQUISITES (NEW) -->
+  <section class="section prereq">
+    <div class="sec-label r">Antes de la llamada</div>
+    <h2 class="sec-title r">Qué necesitamos para empezar.</h2>
+    <div class="prereq-grid">
+      <div class="prereq-card r">
+        <div class="prereq-num">1</div>
+        <div class="prereq-title">Acceso lectura a tu consola de billing</div>
+        <div class="prereq-desc">GCP Billing Export, AWS Cost Explorer, o Azure Cost Management. Solo lectura, sin acceso a infraestructura.</div>
+      </div>
+      <div class="prereq-card r">
+        <div class="prereq-num">2</div>
+        <div class="prereq-title">Copia de contratos o términos vigentes</div>
+        <div class="prereq-desc">Enterprise Agreement, EDP, o cualquier compromiso activo con el hyperscaler. Si no tienes el documento, el nombre del programa y su vigencia son suficientes para arrancar.</div>
+      </div>
+      <div class="prereq-card r">
+        <div class="prereq-num">3</div>
+        <div class="prereq-title">30 minutos con quien lidera infra o cloud</div>
+        <div class="prereq-desc">Para entender el perfil de consumo, los planes de crecimiento, y los pain points actuales. Nada más.</div>
+      </div>
     </div>
   </section>
 
@@ -437,10 +521,11 @@
     <div class="cta-inner">
       <div class="sec-label r">Conversemos</div>
       <h2 class="cta-title r">¿Cuánto estás <em>pagando de más?</em></h2>
-      <p class="cta-sub r">Una llamada de 30 minutos es suficiente para saber si hay oportunidad. Sin compromiso.</p>
+      <p class="cta-sub r">30 minutos. Sin costo. Revisamos tu situación actual y te decimos si hay oportunidad de ahorro relevante.</p>
       <div class="cta-links r">
+        <!-- TODO: Replace with your actual Calendly URL -->
+        <a href="https://calendly.com/auriccloud/diagnostico" class="btn-gold" target="_blank">Agendar diagnóstico</a>
         <a href="mailto:contact@auriccloud.com" class="cta-email">contact@auriccloud.com</a>
-        <a href="https://linkedin.com" class="cta-li">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -464,22 +549,11 @@
       <span class="badge">FOCUS</span>
     </div>
     <div class="footer-links">
-      <a href="mailto:contact@auriccloud.com">contact@auriccloud.com</a>
-      <a href="https://linkedin.com">LinkedIn</a>
+      <a href="/cdn-cgi/l/email-protection#a3c0cccdd7c2c0d7e3c2d6d1cac0c0cfccd6c78dc0ccce"><span class="__cf_email__" data-cfemail="791a16170d181a0d39180c0b101a1a15160c1d571a1614">[email&#160;protected]</span></a>
+      <!-- TODO: Replace with your actual LinkedIn profile URL -->
+      <a href="https://linkedin.com/in/antoniomarangunic">LinkedIn</a>
     </div>
     <div class="footer-copy">© 2026 Auric Cloud Advisory · Santiago, Chile</div>
   </footer>
 
-  <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('on'), i * 70);
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-    document.querySelectorAll('.r').forEach(el => obs.observe(el));
-  </script>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn
