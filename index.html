@@ -83,10 +83,13 @@
       margin-top: 56px; padding-top: 32px;
       border-top: 1px solid rgba(255,255,255,0.07);
     }
+    .hero-badges { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); align-items: flex-start; }
+    .cert-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; }
+    .cert-badge img { width: 60px; height: 60px; object-fit: contain; transition: transform 0.2s; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+    .cert-badge:hover img { transform: translateY(-3px); }
+    .cert-badge span { font-size: 9px; font-weight: 300; letter-spacing: 0.1em; color: var(--muted); text-align: center; max-width: 64px; line-height: 1.4; }
     .stat { display: flex; flex-direction: column; gap: 5px; }
-    .stat-val { font-size: 28px; font-weight: 300; color: var(--gold); letter-spacing: -0.01em; line-height: 1; }
     .stat-val sup { font-size: 14px; vertical-align: super; }
-    .stat-lbl { font-size: 11px; font-weight: 300; color: var(--muted); max-width: 180px; line-height: 1.5; }
 
     /* Hero right panel — market context */
     .hero-panel {
@@ -271,19 +274,28 @@
           <a href="mailto:contact@auriccloud.com" class="btn-gold">Conversemos</a>
           <a href="#proceso" class="btn-ghost">Ver cómo funciona</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat r">
-            <div class="stat-val">$300M<sup>+</sup></div>
-            <div class="stat-lbl">USD en contratos IT negociados con AWS, Microsoft y Google</div>
+        <div class="hero-badges">
+          <div class="cert-badge r">
+            <img src="https://images.credly.com/images/08a5010a-0c0a-448c-981e-c116fedd380c/image.png" alt="FinOps Certified Practitioner">
+            <span>FinOps Practitioner</span>
           </div>
-          <div class="stat r">
-            <div class="stat-val">200<sup>+</sup></div>
-            <div class="stat-lbl">Procesos de negociación liderados con hyperscalers</div>
+          <div class="cert-badge r">
+            <img src="https://images.credly.com/images/c28f46e1-b0cf-4581-a963-d04db79cd39c/image.png" alt="FinOps FOCUS Analyst">
+            <span>FOCUS Analyst</span>
           </div>
-          <div class="stat r">
-            <div class="stat-val">6</div>
-            <div class="stat-lbl">Años en LATAM Airlines — FP&A y Procurement IT</div>
+          <div class="cert-badge r">
+            <img src="https://images.credly.com/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png" alt="Google Cloud Digital Leader">
+            <span>GCP Digital Leader</span>
           </div>
+          <div class="cert-badge r">
+            <img src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="AWS Certified Cloud Practitioner">
+            <span>AWS Practitioner</span>
+          </div>
+          <div class="cert-badge r">
+            <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Microsoft Azure Fundamentals AZ-900">
+            <span>Azure AZ-900</span>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -301,7 +313,7 @@
         </div>
         <div class="panel-block">
           <div class="panel-lbl">CAGR del gasto cloud global</div>
-          <div class="panel-num dim">19%</div>
+          <div class="panel-num">19%</div>
           <div class="panel-sub">Se duplica en 2028 — IDC / Gartner</div>
         </div>
       </div>
