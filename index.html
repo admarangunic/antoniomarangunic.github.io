@@ -116,6 +116,10 @@
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse at 40% 50%, transparent 20%, rgba(20,30,43,0.7) 100%);
     }
+    .section-bg.light-bg { opacity: 0.08; }
+    .section-bg.light-bg::after {
+      background: radial-gradient(ellipse at 40% 50%, transparent 20%, rgba(245,244,240,0.75) 100%);
+    }
     .section > *:not(.section-bg) { position: relative; z-index: 1; }
     .sec-label { font-size: 10px; font-weight: 300; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
     .sec-title { font-size: clamp(26px, 3.2vw, 40px); font-weight: 300; line-height: 1.15; color: var(--navy); }
@@ -191,7 +195,8 @@
     .step-desc { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.6; }
 
     /* ── CTA ── */
-    .cta { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; }
+    .cta { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; position: relative; overflow: hidden; }
+    .cta > *:not(.section-bg) { position: relative; z-index: 1; }
     .cta-inner { max-width: 560px; }
     .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 16px; }
     .cta-title em { font-style: normal; color: var(--gold); }
@@ -426,6 +431,7 @@
 
   <!-- NOSOTROS (redesigned, moved after Mercado) -->
   <section class="section nosotros" id="nosotros">
+    <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Por qué nosotros</div>
     <h2 class="sec-title r">Experiencia que respalda<br>cada negociación.</h2>
     <div class="nosotros-intro">
@@ -514,6 +520,7 @@
 
   <!-- PREREQUISITES (NEW) -->
   <section class="section prereq">
+    <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1591378603223-e15b45a81640?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Antes de la llamada</div>
     <h2 class="sec-title r">Qué necesitamos para empezar.</h2>
     <div class="prereq-grid">
@@ -537,6 +544,7 @@
 
   <!-- CTA -->
   <section class="cta" id="contacto">
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1558029137-85e8e4d1960e?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="cta-inner">
       <div class="sec-label r">Conversemos</div>
       <h2 class="cta-title r">¿Cuánto estás <em>pagando de más?</em></h2>
@@ -583,4 +591,4 @@
     document.querySelectorAll('.r').forEach(el => io.observe(el));
   </script>
 </body>
-</html>
+  </html>
