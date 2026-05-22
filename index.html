@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auric Cloud Advisory | FinOps & Cloud Negotiation</title>
-  <meta name="description" content="Auric Cloud Advisory — consultoría especializada en diagnóstico de contratos cloud y negociación con hyperscalers para empresas en Latinoamérica.">
+  <title>Altaris Cloud Advisory | FinOps & Cloud Negotiation</title>
+  <meta name="description" content="Altaris Cloud Advisory — consultoría especializada en diagnóstico de contratos cloud y negociación con hyperscalers para empresas en Latinoamérica.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -54,7 +54,6 @@
       background-size: cover; background-position: center;
       opacity: 0.16; pointer-events: none;
     }
-    /* subtle vignette — darkens edges so text stays readable */
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(20,30,43,0.65) 100%);
@@ -77,21 +76,13 @@
     .btn-ghost { font-size: 11px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid rgba(154,152,144,0.4); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
     .btn-ghost:hover { color: var(--cream); border-color: var(--cream); }
 
-    /* Hero bottom stats — Auric's own numbers */
-    .hero-stats {
-      display: flex; gap: 52px; flex-wrap: wrap;
-      margin-top: 56px; padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
     .hero-badges { display: flex; gap: 40px; flex-wrap: nowrap; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.07); align-items: flex-start; }
     .cert-badge { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: default; }
     .cert-badge img { width: 88px; height: 88px; object-fit: contain; transition: transform 0.2s; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
     .cert-badge:hover img { transform: translateY(-4px); }
     .cert-badge span { font-size: 9px; font-weight: 300; letter-spacing: 0.1em; color: var(--muted); text-align: center; max-width: 80px; line-height: 1.4; }
     .stat { display: flex; flex-direction: column; gap: 5px; }
-    .stat-val sup { font-size: 14px; vertical-align: super; }
 
-    /* Hero right panel — market context */
     .hero-panel {
       border: 1px solid rgba(200,162,84,0.18);
       background: rgba(20,30,43,0.55);
@@ -102,7 +93,6 @@
     .panel-block + .panel-block { border-top: 1px solid rgba(200,162,84,0.1); }
     .panel-lbl { font-size: 10px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
     .panel-num { font-size: 44px; font-weight: 300; color: var(--gold); line-height: 1; letter-spacing: -0.02em; }
-    .panel-num.dim { color: var(--muted); }
     .panel-sub { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; line-height: 1.5; }
 
     /* ── SECTIONS base ── */
@@ -125,13 +115,12 @@
     .sec-title { font-size: clamp(26px, 3.2vw, 40px); font-weight: 300; line-height: 1.15; color: var(--navy); }
     .sec-title.light { color: var(--cream); }
 
-    /* ── NOSOTROS (redesigned) ── */
+    /* ── NOSOTROS ── */
     .nosotros { background: var(--light); }
     .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 36px; }
     .nosotros-copy { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .nosotros-copy p + p { margin-top: 18px; }
     .nosotros-copy strong { font-weight: 400; color: var(--navy); }
-    .nosotros-profile { }
     .nosotros-name { font-size: 22px; font-weight: 400; color: var(--navy); letter-spacing: 0.02em; }
     .nosotros-title { font-size: 11px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
     .nosotros-role { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; }
@@ -144,7 +133,6 @@
     .profile-certs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
     .profile-certs span { font-size: 9px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 5px 10px; border: 1px solid rgba(20,30,43,0.1); }
 
-    /* Chart */
     .chart-wrap { background: var(--navy); padding: 28px 30px; margin-top: 36px; }
     .chart-title { font-size: 9px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
     .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
@@ -158,7 +146,6 @@
     .leg { display: flex; align-items: center; gap: 7px; font-size: 9px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); }
     .leg-dot { width: 8px; height: 8px; flex-shrink: 0; }
 
-    /* Market stats strip */
     .mstats { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 48px; border-top: 1px solid rgba(20,30,43,0.08); }
     .ms { padding: 24px 20px 24px 0; }
     .ms + .ms { padding-left: 20px; border-left: 1px solid rgba(20,30,43,0.07); }
@@ -205,8 +192,6 @@
     .cta-links { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
     .cta-email { font-size: 15px; font-weight: 300; color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(200,162,84,0.4); padding-bottom: 3px; transition: border-color 0.2s; }
     .cta-email:hover { border-color: var(--gold); color: var(--gold); }
-    .cta-li { font-size: 12px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .cta-li:hover { color: var(--cream); }
 
     /* ── FOOTER ── */
     footer {
@@ -222,7 +207,7 @@
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { width: 100%; font-size: 10px; font-weight: 300; letter-spacing: 0.12em; color: rgba(107,110,114,0.45); text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.04); }
 
-    /* ── FINOPS CONTEXT (NEW) ── */
+    /* ── FINOPS CONTEXT ── */
     .finops { background: var(--navy); min-height: 100vh; }
     .finops .sec-title { color: var(--cream); }
     .finops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 36px; }
@@ -238,13 +223,80 @@
     .role-item p { font-size: 11px; font-weight: 300; color: var(--gray); line-height: 1.55; }
     .finops-conclusion { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(200,162,84,0.1); font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--cream); }
 
-    /* ── PREREQUISITES (NEW) ── */
+    /* ── PREREQUISITES ── */
     .prereq { background: var(--light); }
     .prereq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 40px; }
     .prereq-card { background: #fff; padding: 32px 24px; border-bottom: 2px solid var(--gold); }
     .prereq-num { font-size: 28px; font-weight: 300; color: var(--gold); margin-bottom: 10px; }
     .prereq-title { font-size: 13px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
     .prereq-desc { font-size: 12px; font-weight: 300; color: var(--gray); line-height: 1.6; }
+
+    /* ── ALTARIS LOGO (Tenor Sans) ── */
+    .altaris-wordmark {
+      font-family: 'Tenor Sans', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .altaris-wordmark .word-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(58,74,90,0.8);
+      display: inline-block;
+    }
+    .altaris-wordmark .word-sub {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .altaris-wordmark .word-sub span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: var(--gray);
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    .altaris-wordmark-footer {
+      font-family: 'Tenor Sans', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .altaris-wordmark-footer .word-divider {
+      width: 1px;
+      height: 24px;
+      background: rgba(58,74,90,0.8);
+    }
+    .altaris-wordmark-footer .word-sub span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.5px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--gray);
+      text-transform: uppercase;
+      display: block;
+      line-height: 1.4;
+    }
+    .altaris-gold-bar {
+      width: 26px;
+      height: 1.5px;
+      background: var(--gold);
+      margin-top: 2px;
+    }
 
     /* ── REVEAL ANIMATION ── */
     .r { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
@@ -256,7 +308,6 @@
       .mercado-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-panel { display: none; }
-      .nosotros-intro { grid-template-columns: 1fr; gap: 40px; }
       .nosotros-grid { grid-template-columns: 1fr; gap: 40px; }
       .profile-nums { grid-template-columns: 1fr; }
       .finops-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -270,7 +321,6 @@
       .nav-links { display: none; }
       .section { padding: 60px 20px; }
       .hero { padding: 80px 20px 48px; }
-      .hero-stats { gap: 32px; }
       .steps { grid-template-columns: 1fr; }
       .mstats { grid-template-columns: 1fr; }
       footer { padding: 32px 20px; }
@@ -283,13 +333,17 @@
   <!-- NAV -->
   <nav>
     <a href="#inicio" class="nav-logo">
-      <svg height="30" viewBox="0 0 256 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="37" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="38" font-weight="500" letter-spacing="1" fill="#E4E2DA">AURIC</text>
-        <rect x="0" y="43" width="26" height="1.5" fill="#C8A254"/>
-        <rect x="122" y="5" width="1" height="38" fill="#3A4A5A"/>
-        <text x="130" y="20" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="10.5" font-weight="300" letter-spacing="3" fill="#6B6E72">CLOUD</text>
-        <text x="130" y="36" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="10.5" font-weight="300" letter-spacing="1.8" fill="#6B6E72">ADVISORY</text>
-      </svg>
+      <div class="altaris-wordmark">
+        <div>
+          Altaris
+          <div class="altaris-gold-bar"></div>
+        </div>
+        <div class="word-divider"></div>
+        <div class="word-sub">
+          <span>Cloud</span>
+          <span>Advisory</span>
+        </div>
+      </div>
     </a>
     <ul class="nav-links">
       <li><a href="#nosotros">Nosotros</a></li>
@@ -298,22 +352,20 @@
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="mailto:contact@auriccloud.com" class="nav-cta">Conversemos</a>
+    <a href="mailto:contact@altaris.io" class="nav-cta">Conversemos</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-bg"></div>
     <div class="hero-inner">
-
-      <!-- Left -->
       <div>
         <p class="hero-eyebrow r">Santiago, Chile · FinOps & Cloud Advisory</p>
         <h1 class="hero-headline r">Reduce lo que<br>pagas por <em>cloud.</em></h1>
         <div class="gold-rule r"></div>
         <p class="hero-body r">Consultoría especializada en diagnóstico de contratos cloud y negociación con hyperscalers para empresas en Latinoamérica.</p>
         <div class="hero-actions r">
-          <a href="mailto:contact@auriccloud.com" class="btn-gold">Conversemos</a>
+          <a href="mailto:contact@altaris.io" class="btn-gold">Conversemos</a>
           <a href="#proceso" class="btn-ghost">Ver cómo funciona</a>
         </div>
         <div class="hero-badges">
@@ -338,10 +390,9 @@
             <span>Azure AZ-900</span>
           </div>
         </div>
-        </div>
       </div>
 
-      <!-- Right panel — market data -->
+      <!-- Right panel -->
       <div class="hero-panel r">
         <div class="panel-block">
           <div class="panel-lbl">Ahorro promedio sin capturar</div>
@@ -359,11 +410,10 @@
           <div class="panel-sub">Se duplica en 2028 — IDC / Gartner</div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- FINOPS CONTEXT (NEW) -->
+  <!-- FINOPS CONTEXT -->
   <section class="section finops" id="finops">
     <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1492693859998-63ccf2ddafd2?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">El contexto</div>
@@ -389,7 +439,7 @@
           <strong><span class="role-warn"><svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></span> Procurement generalista</strong>
           <p>Negocia contratos de todo tipo pero enfrenta cloud como categoría opaca, con pricing dinámico.</p>
         </div>
-        <div class="finops-conclusion">La negociación cloud requiere visibilidad técnica, disciplina financiera y experiencia en procurement. Ese perfil no suele existir internamente. Y ahí es donde entra Auric.</div>
+        <div class="finops-conclusion">La negociación cloud requiere visibilidad técnica, disciplina financiera y experiencia en procurement. Ese perfil no suele existir internamente. Y ahí es donde entra Altaris.</div>
       </div>
     </div>
   </section>
@@ -430,18 +480,16 @@
     </div>
   </section>
 
-  <!-- NOSOTROS (redesigned, moved after Mercado) -->
+  <!-- NOSOTROS -->
   <section class="section nosotros" id="nosotros">
     <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1557999127-7f1a78da0b10?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Por qué nosotros</div>
     <h2 class="sec-title r">Experiencia que respalda<br>cada negociación.</h2>
     <div class="nosotros-grid">
-      <!-- Left: copy -->
       <div class="nosotros-copy r">
         <p>Venimos de años negociando contratos de ocho cifras con AWS, Microsoft y Google para una de las empresas más complejas tecnológicamente de Latinoamérica. Conocemos los ciclos de venta de los hyperscalers, sus estructuras de incentivos y las palancas reales que mueven la aguja.</p>
         <p>No somos una consultora genérica de cloud. Somos independientes — sin contrato con ningún hyperscaler. Nuestro único incentivo está del lado del cliente.</p>
       </div>
-      <!-- Right: full profile -->
       <div class="nosotros-profile r">
         <div class="nosotros-name">Antonio Marangunic</div>
         <div class="nosotros-title">Founder & Main Consultant</div>
@@ -482,7 +530,6 @@
     <div class="sec-label r">Cómo trabajamos</div>
     <h2 class="sec-title light r">5 semanas a un contrato mejor.</h2>
     <p class="proceso-intro r">Desde el diagnóstico del contrato hasta la firma del acuerdo optimizado con el hyperscaler.</p>
-
     <div class="steps">
       <div class="step r">
         <div class="step-roman">I</div>
@@ -523,7 +570,7 @@
     </div>
   </section>
 
-  <!-- PREREQUISITES (NEW) -->
+  <!-- PREREQUISITES -->
   <section class="section prereq">
     <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1511213574-c6abde530d6f?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Antes de la llamada</div>
@@ -555,24 +602,25 @@
       <h2 class="cta-title r">¿Cuánto estás <em>pagando de más?</em></h2>
       <p class="cta-sub r">30 minutos. Sin costo. Revisamos tu situación actual y te decimos si hay oportunidad de ahorro relevante.</p>
       <div class="cta-links r">
-        <!-- TODO: Replace with your actual Calendly URL -->
-        <a href="https://calendly.com/auriccloud/diagnostico" class="btn-gold" target="_blank">Agendar diagnóstico</a>
-        <a href="mailto:contact@auriccloud.com" class="cta-email">contact@auriccloud.com</a>
+        <a href="https://calendly.com/altaris/diagnostico" class="btn-gold" target="_blank">Agendar diagnóstico</a>
+        <a href="mailto:contact@altaris.io" class="cta-email">contact@altaris.io</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div>
-      <svg height="26" viewBox="0 0 256 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="37" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="38" font-weight="500" letter-spacing="1" fill="#E4E2DA">AURIC</text>
-        <rect x="0" y="43" width="26" height="1.5" fill="#C8A254"/>
-        <rect x="122" y="5" width="1" height="38" fill="#3A4A5A"/>
-        <text x="130" y="20" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="10.5" font-weight="300" letter-spacing="3" fill="#6B6E72">CLOUD</text>
-        <text x="130" y="36" font-family="'DM Sans','Helvetica Neue',Helvetica,sans-serif" font-size="10.5" font-weight="300" letter-spacing="1.8" fill="#6B6E72">ADVISORY</text>
-      </svg>
-    </div>
+    <a href="#inicio" class="altaris-wordmark-footer">
+      <div>
+        Altaris
+        <div class="altaris-gold-bar"></div>
+      </div>
+      <div class="word-divider"></div>
+      <div class="word-sub">
+        <span>Cloud</span>
+        <span>Advisory</span>
+      </div>
+    </a>
     <div class="footer-badges">
       <span class="badge">AWS</span>
       <span class="badge">Azure</span>
@@ -581,15 +629,13 @@
       <span class="badge">FOCUS</span>
     </div>
     <div class="footer-links">
-      <a href="mailto:contact@auriccloud.com">contact@auriccloud.com</a>
-      <!-- TODO: Replace with your actual LinkedIn profile URL -->
+      <a href="mailto:contact@altaris.io">contact@altaris.io</a>
       <a href="https://linkedin.com/in/antoniomarangunic">LinkedIn</a>
     </div>
-    <div class="footer-copy">© 2026 Auric Cloud Advisory · Santiago, Chile</div>
+    <div class="footer-copy">© 2026 Altaris Cloud Advisory · Santiago, Chile</div>
   </footer>
 
   <script>
-    // Reveal-on-scroll
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
