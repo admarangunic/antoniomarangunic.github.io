@@ -106,22 +106,26 @@
     .sec-title { font-size: clamp(26px, 3.2vw, 40px); font-weight: 300; line-height: 1.15; color: var(--navy); }
     .sec-title.light { color: var(--cream); }
     /* ── NOSOTROS ── */
-    .nosotros { background: var(--light); }
+    .nosotros { background: var(--navy); }
+    .nosotros .sec-title { color: var(--cream); }
     .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; margin-top: 36px; }
     .nosotros-copy { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gray); }
     .nosotros-copy p + p { margin-top: 18px; }
     .nosotros-copy strong { font-weight: 400; color: var(--navy); }
+    .nosotros .nosotros-copy { color: var(--muted); }
+    .nosotros .nosotros-copy strong { color: var(--cream); }
     .nosotros-name { font-size: 22px; font-weight: 400; color: var(--navy); letter-spacing: 0.02em; }
+    .nosotros .nosotros-name { color: var(--cream); }
     .nosotros-title { font-size: 11px; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
     .nosotros-role { font-size: 12px; font-weight: 300; color: var(--muted); margin-top: 6px; }
     .nosotros-li { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 300; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,162,84,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
     .nosotros-li:hover { border-color: var(--gold); }
     .profile-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 28px; }
-    .profile-num { background: #fff; padding: 20px 18px; border-bottom: 2px solid var(--gold); }
+    .profile-num { background: rgba(255,255,255,0.04); padding: 20px 18px; border-bottom: 2px solid var(--gold); }
     .profile-num-val { font-size: 24px; font-weight: 300; color: var(--gold); letter-spacing: -0.02em; line-height: 1; }
-    .profile-num-label { font-size: 11px; font-weight: 300; color: var(--gray); margin-top: 6px; line-height: 1.45; }
+    .profile-num-label { font-size: 11px; font-weight: 300; color: var(--muted); margin-top: 6px; line-height: 1.45; }
     .profile-certs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-    .profile-certs span { font-size: 9px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 5px 10px; border: 1px solid rgba(20,30,43,0.1); }
+    .profile-certs span { font-size: 9px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 5px 10px; border: 1px solid rgba(107,110,114,0.28); }
     .chart-wrap { background: var(--navy); padding: 28px 30px; margin-top: 36px; }
     .chart-title { font-size: 9px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
     .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
@@ -454,7 +458,7 @@
   </section>
   <!-- NOSOTROS -->
   <section class="section nosotros" id="nosotros">
-    <div class="section-bg light-bg" style="background-image: url('https://images.unsplash.com/photo-1557999127-7f1a78da0b10?w=1920&q=70&auto=format&fit=crop')"></div>
+    <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1557999127-7f1a78da0b10?w=1920&q=70&auto=format&fit=crop')"></div>
     <div class="sec-label r">Por qué nosotros</div>
     <h2 class="sec-title r">Experiencia que respalda<br>cada negociación.</h2>
     <div class="nosotros-grid">
