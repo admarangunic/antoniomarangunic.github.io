@@ -38,6 +38,12 @@
     .nav-links a:hover { color: var(--gold); }
     .nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 10px 22px; text-decoration: none; transition: opacity 0.2s; }
     .nav-cta:hover { opacity: 0.85; }
+    .nav-cta-mobile { display: none; }
+    .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 32px; height: 32px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
+    .nav-toggle span { display: block; width: 100%; height: 1.5px; background: var(--cream); transition: transform 0.25s ease, opacity 0.2s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     /* ── HERO ── */
     .hero {
       min-height: 100vh; background: var(--navy);
@@ -173,6 +179,7 @@
     /* ── CTA ── */
     .cta { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 48px; position: relative; overflow: hidden; }
     .cta > *:not(.section-bg) { position: relative; z-index: 1; }
+    .cta-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 72px; align-items: start; }
     .cta-inner { max-width: 560px; }
     .cta-title { font-size: clamp(28px, 4vw, 48px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 16px; }
     .cta-title em { font-style: normal; color: var(--gold); }
@@ -180,6 +187,18 @@
     .cta-links { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
     .cta-email { font-size: 15px; font-weight: 300; color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(200,162,84,0.4); padding-bottom: 3px; transition: border-color 0.2s; }
     .cta-email:hover { border-color: var(--gold); color: var(--gold); }
+    /* ── FAQ ── */
+    .cta-faq { margin-top: 4px; }
+    .faq-label { font-size: 10px; font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .faq-item { border-bottom: 1px solid rgba(200,162,84,0.15); }
+    .faq-item:first-of-type { border-top: 1px solid rgba(200,162,84,0.15); }
+    .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: none; border: none; cursor: pointer; padding: 18px 0; text-align: left; font-family: var(--font); }
+    .faq-q span:first-child { font-size: 13.5px; font-weight: 400; color: var(--cream); line-height: 1.5; }
+    .faq-icon { font-size: 18px; font-weight: 300; color: var(--gold); flex-shrink: 0; line-height: 1; transition: transform 0.25s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding-bottom 0.35s ease; }
+    .faq-a p { font-size: 12.5px; font-weight: 300; line-height: 1.75; color: var(--muted); max-width: 92%; }
+    .faq-item.open .faq-a { max-height: 260px; padding-bottom: 20px; }
     /* ── FOOTER ── */
     footer {
       background: var(--navy-2); padding: 40px 48px;
@@ -289,20 +308,43 @@
       .section, .proceso, .cta { min-height: auto; }
       .mercado-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-panel { display: none; }
+      .hero-panel { border-left: none; border-right: none; margin-top: 8px; }
       .nosotros-grid { grid-template-columns: 1fr; gap: 40px; }
       .profile-nums { grid-template-columns: 1fr; }
       .finops-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cta-grid { grid-template-columns: 1fr; gap: 40px; }
       .steps { grid-template-columns: 1fr 1fr; }
       .step::after { display: none; }
       .mstats { grid-template-columns: 1fr 1fr; }
       .prereq-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0 20px; }
-      .nav-links { display: none; }
+      nav { padding: 0 16px; }
+      .nav-toggle { display: flex; }
+      .nav-cta { display: none; }
+      .nav-links {
+        display: flex; flex-direction: column; gap: 0;
+        position: fixed; top: 64px; left: 0; right: 0;
+        background: var(--navy);
+        border-bottom: 1px solid rgba(200,162,84,0.15);
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .nav-links.open { max-height: 420px; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-cta-mobile { display: block; margin: 16px 20px; padding: 12px 22px; background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; text-align: center; }
       .section { padding: 60px 20px; }
       .hero { padding: 80px 20px 48px; }
+      .hero-badges { flex-wrap: wrap; gap: 22px 20px; }
+      .cert-badge img { width: 60px; height: 60px; }
+      .cert-badge span { max-width: 68px; }
+      .hero-panel { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(200,162,84,0.12); border: none; }
+      .hero-panel .panel-block { padding: 16px 8px; text-align: center; }
+      .hero-panel .panel-block + .panel-block { border-top: none; }
+      .hero-panel .panel-num { font-size: 24px; }
+      .hero-panel .panel-lbl { font-size: 8px; margin-bottom: 4px; }
+      .hero-panel .panel-sub { display: none; }
       .steps { grid-template-columns: 1fr; }
       .mstats { grid-template-columns: 1fr; }
       footer { padding: 32px 20px; }
@@ -332,8 +374,12 @@
       <li><a href="#mercado">Mercado</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
+      <li><a href="mailto:PENDIENTE@vedrocloud.com" class="nav-cta-mobile">Conversemos</a></li>
     </ul>
     <a href="mailto:PENDIENTE@vedrocloud.com" class="nav-cta">Conversemos</a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
   <!-- HERO -->
   <section class="hero" id="inicio">
@@ -547,13 +593,53 @@
   <!-- CTA -->
   <section class="cta" id="contacto">
     <div class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1724447403533-cddddb2b6335?w=1920&q=70&auto=format&fit=crop')"></div>
-    <div class="cta-inner">
-      <div class="sec-label r">Conversemos</div>
-      <h2 class="cta-title r">¿Cuánto estás <em>pagando de más?</em></h2>
-      <p class="cta-sub r">30 minutos. Sin costo. Revisamos tu situación actual y te decimos si hay oportunidad de ahorro relevante.</p>
-      <div class="cta-links r">
-        <a href="https://calendly.com/PENDIENTE/diagnostico" class="btn-gold" target="_blank">Agendar diagnóstico</a>
-        <a href="mailto:PENDIENTE@vedrocloud.com" class="cta-email">PENDIENTE@vedrocloud.com</a>
+    <div class="cta-grid">
+      <div class="cta-inner">
+        <div class="sec-label r">Conversemos</div>
+        <h2 class="cta-title r">¿Cuánto estás <em>pagando de más?</em></h2>
+        <p class="cta-sub r">30 minutos. Sin costo. Revisamos tu situación actual y te decimos si hay oportunidad de ahorro relevante.</p>
+        <div class="cta-links r">
+          <a href="https://calendly.com/PENDIENTE/diagnostico" class="btn-gold" target="_blank">Agendar diagnóstico</a>
+          <a href="mailto:PENDIENTE@vedrocloud.com" class="cta-email">PENDIENTE@vedrocloud.com</a>
+        </div>
+      </div>
+      <div class="cta-faq r">
+        <div class="faq-label">Preguntas frecuentes</div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span>¿Necesitamos darles acceso a nuestra facturación cloud?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Sí, acceso de solo lectura a la consola de costos (AWS Cost Explorer, GCP Billing o Azure Cost Management) para hacer el diagnóstico. Nunca pedimos credenciales de pago ni acceso a producción, y toda la información se trata bajo estricta confidencialidad.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span>¿Cuánto cuesta el servicio?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Nuestro modelo de honorarios está basado en resultados: cobramos sobre el ahorro que efectivamente se genera, no una tarifa fija por adelantado. Si el diagnóstico no encuentra una oportunidad real, no hay costo para ti. Revisamos el detalle exacto en la llamada inicial.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span>¿Qué pasa si no encuentran ahorro?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Te lo decimos directamente y ahí termina el compromiso — sin letra chica ni obligación de continuar. Nuestro incentivo está alineado con el tuyo: solo ganamos si tú ganas.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span>¿Cuál es el compromiso mínimo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Con Vedro Cloud, ninguno más allá del proyecto de diagnóstico y negociación. El compromiso real es el que asumes con el hyperscaler (típicamente entre 1 y 3 años según el instrumento), y te ayudamos a estructurarlo para minimizar el riesgo frente a tu forecast de consumo.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span>¿Trabajan con AWS, Azure y GCP al mismo tiempo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><p>Sí. La mayoría de nuestros clientes opera multi-cloud. Analizamos cada nube por separado, porque los instrumentos de descuento son distintos, pero coordinamos la estrategia de negociación de forma conjunta.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -588,6 +674,27 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
     document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const wasOpen = item.classList.contains('open');
+        item.closest('.cta-faq').querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
   </script>
 </body>
 </html>
